@@ -6,7 +6,7 @@ Scriptname DU01TIF__064097AC Extends TopicInfo Hidden
 Function Fragment_1(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
-(GetOwningQuest() as DU01BaegothController).FollowerFollow()
+(GetOwningQuest() as DU01BaegothController).FollowerWait()
 ;END CODE
 EndFunction
 ;END FRAGMENT
