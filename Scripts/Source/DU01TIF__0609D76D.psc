@@ -7,8 +7,11 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 getowningquest().setstage(20)
+Game.GetPlayer().Additem(DU01SpellTomeSummonDagothUr, 1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
 
 ;END FRAGMENT CODE - Do not edit anything between this and the begin comment
+
+Book Property DU01SpellTomeSummonDagothUr  Auto  

@@ -3,7 +3,7 @@ Scriptname DU01FQScript extends Quest
 Ingredient Property pDU01FrosttrollForeskin Auto Conditional
 Ingredient Property pDU01GiantForeskin Auto Conditional
 Ingredient Property pDU01HorseForeskin Auto Conditional
-Potion Property pDU01ForeskinPotion Auto Conditional
+MiscObject Property pDU01ForeskinPotion Auto Conditional
 GlobalVariable Property pDU01GFCount Auto Conditional
 GlobalVariable Property pDU01HFCount Auto Conditional
 GlobalVariable Property pDU01TFCount Auto Conditional
@@ -60,22 +60,22 @@ endFunction
 
 Function ForeskinPotionCounted()
 
-	float CurrentCount = Game.GetPlayer().GetItemCount(pDU01ForeskinPotion)
-	if (Game.GetPlayer().GetItemCount(pDU01ForeskinPotion) == 0)
- 		 Debug.MessageBox("Player doesn't have the super-secret potion")
-	endif
-	if (Game.GetPlayer().GetItemCount(pDU01ForeskinPotion) == 1)
- 		 Debug.MessageBox("Player does have the super-secret potion")
-	endIf
-	pDU01FPCount.Value = CurrentCount
-	UpdateCurrentInstanceGlobal(pDU01FPCount)
-	if CurrentCount >= 1
-		pDU01FQ.SetObjectiveCompleted(4,1)
-	elseif CurrentCount < 1
-       	pDU01FQ.SetObjectiveCompleted(4,0)
-       	pDU01FQ.SetObjectiveDisplayed(5,0)
-      		pDU01FQ.SetObjectiveDisplayed(4,true,true)
-   	endif
+    float CurrentCount = Game.GetPlayer().GetItemCount(pDU01ForeskinPotion)
+    if (Game.GetPlayer().GetItemCount(pDU01ForeskinPotion) == 0)
+          Debug.MessageBox("Player doesn't have the super-secret potion")
+    endif
+    if (Game.GetPlayer().GetItemCount(pDU01ForeskinPotion) == 1)
+          Debug.MessageBox("Player does have the super-secret potion")
+    endIf
+    pDU01FPCount.Value = CurrentCount
+    UpdateCurrentInstanceGlobal(pDU01FPCount)
+    if CurrentCount >= 1
+        pDU01FQ.SetObjectiveCompleted(4,1)
+    elseif CurrentCount < 1
+           pDU01FQ.SetObjectiveCompleted(4,0)
+           pDU01FQ.SetObjectiveDisplayed(5,0)
+              pDU01FQ.SetObjectiveDisplayed(4,true,true)
+       endif
 
 endFunction
 
