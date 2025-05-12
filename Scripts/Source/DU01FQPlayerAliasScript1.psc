@@ -17,7 +17,6 @@ Event OnInit()
 endEvent
 
 Event OnItemAdded(Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer)
-Debug.MessageBox("onItemAdded Running")
     if pDU01FQ.GetStageDone(10) == 1
         if pDU01FQ.GetStageDone(20) == 0
             if akBaseItem == pDU01GiantForeskin

@@ -28,6 +28,14 @@ GlobalVariable Property FollowerRecruited Auto
 
 Int Property iFollowerDismiss Auto Conditional
 
+GlobalVariable Property DU01IsBaegoth Auto
+
+Actor Property DU01DagothUr Auto
+
+Actor Property DU01BaegothUr Auto
+
+Spell Property DU01DagothSwapSpell Auto
+
  
 
 Function SetFollower(ObjectReference FollowerRef)

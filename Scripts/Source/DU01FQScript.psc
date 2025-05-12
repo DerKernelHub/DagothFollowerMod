@@ -62,10 +62,8 @@ Function ForeskinPotionCounted()
 
     float CurrentCount = Game.GetPlayer().GetItemCount(pDU01ForeskinPotion)
     if (Game.GetPlayer().GetItemCount(pDU01ForeskinPotion) == 0)
-          Debug.MessageBox("Player doesn't have the super-secret potion")
     endif
     if (Game.GetPlayer().GetItemCount(pDU01ForeskinPotion) == 1)
-          Debug.MessageBox("Player does have the super-secret potion")
     endIf
     pDU01FPCount.Value = CurrentCount
     UpdateCurrentInstanceGlobal(pDU01FPCount)
