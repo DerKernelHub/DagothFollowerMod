@@ -7,9 +7,8 @@ Function Fragment_0(ObjectReference akSpeakerRef)
 Actor akSpeaker = akSpeakerRef as Actor
 ;BEGIN CODE
 Game.GetPlayer().Additem(DA09Crystal, 1)
-
+debug.messagebox(DA09Property.Start())
 DA09Property.setStage(100)
-
 (DU01DagothGemAlias as DA09GemScript).PlayScene()
 ;END CODE
 EndFunction
