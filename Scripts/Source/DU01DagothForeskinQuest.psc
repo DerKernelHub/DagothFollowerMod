@@ -2,20 +2,31 @@
 ;NEXT FRAGMENT INDEX 14
 Scriptname DU01DagothForeskinQuest Extends Quest Hidden
 
-;BEGIN ALIAS PROPERTY DU01FQBaegothAlias
-;ALIAS PROPERTY TYPE ReferenceAlias
-ReferenceAlias Property Alias_DU01FQBaegothAlias Auto
-;END ALIAS PROPERTY
-
 ;BEGIN ALIAS PROPERTY DU01FQPlayerAlias
 ;ALIAS PROPERTY TYPE ReferenceAlias
 ReferenceAlias Property Alias_DU01FQPlayerAlias Auto
 ;END ALIAS PROPERTY
 
-;BEGIN FRAGMENT Fragment_11
-Function Fragment_11()
+;BEGIN ALIAS PROPERTY DU01FQBaegothAlias
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DU01FQBaegothAlias Auto
+;END ALIAS PROPERTY
+
+;BEGIN ALIAS PROPERTY DU01FQDagoth
+;ALIAS PROPERTY TYPE ReferenceAlias
+ReferenceAlias Property Alias_DU01FQDagoth Auto
+;END ALIAS PROPERTY
+
+;BEGIN FRAGMENT Fragment_7
+Function Fragment_7()
 ;BEGIN CODE
-PlayerREF.DoCombatSpellApply(DU01DagothSwapSpell, PlayerREF)
+SetObjectiveDisplayed(4)
+SetObjectiveDisplayed(1,0)
+SetObjectiveDisplayed(2,0)
+SetObjectiveDisplayed(3,0)
+SetObjectiveCompleted(1,1)
+SetObjectiveCompleted(2,1)
+SetObjectiveCompleted(3,1)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -33,10 +44,23 @@ endif
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_0
-Function Fragment_0()
+;BEGIN FRAGMENT Fragment_11
+Function Fragment_11()
 ;BEGIN CODE
-SetObjectiveDisplayed(0)
+PlayerREF.DoCombatSpellApply(DU01DagothSwapSpell, PlayerREF)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_4
+Function Fragment_4()
+;BEGIN CODE
+;Giant Foreskin check
+pDU01FQCount.Value += 1
+Debug.Messagebox("Gaint <Global=DU01FQCount>")
+if pDU01FQCount.Value >= 3
+SetStage(80) 
+endif
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -54,14 +78,10 @@ endif
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_2
-Function Fragment_2()
+;BEGIN FRAGMENT Fragment_0
+Function Fragment_0()
 ;BEGIN CODE
-SetObjectiveCompleted(0)
-SetObjectiveDisplayed(1)
-SetObjectiveDisplayed(2)
-SetObjectiveDisplayed(3)
-SetObjectiveDisplayed(4,0)
+SetObjectiveDisplayed(0)
 ;END CODE
 EndFunction
 ;END FRAGMENT
@@ -75,29 +95,14 @@ SetObjectiveDisplayed(5)
 EndFunction
 ;END FRAGMENT
 
-;BEGIN FRAGMENT Fragment_7
-Function Fragment_7()
+;BEGIN FRAGMENT Fragment_2
+Function Fragment_2()
 ;BEGIN CODE
-SetObjectiveDisplayed(4)
-SetObjectiveDisplayed(1,0)
-SetObjectiveDisplayed(2,0)
-SetObjectiveDisplayed(3,0)
-SetObjectiveCompleted(1,1)
-SetObjectiveCompleted(2,1)
-SetObjectiveCompleted(3,1)
-;END CODE
-EndFunction
-;END FRAGMENT
-
-;BEGIN FRAGMENT Fragment_4
-Function Fragment_4()
-;BEGIN CODE
-;Giant Foreskin check
-pDU01FQCount.Value += 1
-Debug.Messagebox("Gaint <Global=DU01FQCount>")
-if pDU01FQCount.Value >= 3
-SetStage(80) 
-endif
+SetObjectiveCompleted(0)
+SetObjectiveDisplayed(1)
+SetObjectiveDisplayed(2)
+SetObjectiveDisplayed(3)
+SetObjectiveDisplayed(4,0)
 ;END CODE
 EndFunction
 ;END FRAGMENT

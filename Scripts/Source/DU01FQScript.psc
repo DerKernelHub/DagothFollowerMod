@@ -69,6 +69,7 @@ Function ForeskinPotionCounted()
     UpdateCurrentInstanceGlobal(pDU01FPCount)
     if CurrentCount >= 1
         pDU01FQ.SetObjectiveCompleted(4,1)
+	pDU01FQ.SetObjectiveDisplayed(5,1)
     elseif CurrentCount < 1
            pDU01FQ.SetObjectiveCompleted(4,0)
            pDU01FQ.SetObjectiveDisplayed(5,0)
