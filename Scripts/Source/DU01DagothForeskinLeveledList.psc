@@ -13,6 +13,17 @@ Ingredient Property DU01GiantForeskin  Auto
 
 Ingredient Property DU01FrosttrollForeskin  Auto
 
+Event OnInit()
+	RegisterForSingleUpdate(2.0)
+EndEvent
+
+Event OnUpdate()
+	Inject()
+	UnregisterForUpdate()
+	GotoState("active")
+EndEvent
+
+
 Function addXTimes(Ingredient ingr, LeveledItem itemList, int numTimes)
 
 	int i = 0
@@ -22,8 +33,8 @@ Function addXTimes(Ingredient ingr, LeveledItem itemList, int numTimes)
 	endwhile
 
 EndFunction
-
-Event OnInit()
+	
+Function Inject()
 	;do on startup
       ;To increase chances, add foreskin multiple times
 	;Cannot get length of leveledlist without SKSE, so this will have to suffice. Add 3 forms per type of foreskin?
@@ -36,7 +47,11 @@ Event OnInit()
 	;these have higher drop chances, only add once
 	addXTimes(DU01GiantForeskin, DeathItemGiant, 1)
 	addXTimes(DU01FrosttrollForeskin, DeathItemTrollFrost, 1)
+EndFunction
 
-	;Debug.Trace("OnInit code started")
-       ;Debug.Notification("ForeskinLeveledList: Injecting!")
-EndEvent
+
+State active
+	Event OnUpdate()
+		; Do nothing in here.
+	EndEvent
+EndState
