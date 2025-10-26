@@ -24,7 +24,8 @@ Function addXTimes(Ingredient ingr, LeveledItem itemList, int numTimes)
 EndFunction
 
 Event OnInit()
-    ;To increase chances, add foreskin multiple times
+	;do on startup
+      ;To increase chances, add foreskin multiple times
 	;Cannot get length of leveledlist without SKSE, so this will have to suffice. Add 3 forms per type of foreskin?
 	;Property, LevelToStartAddingAt, HowManyFormsToAdd
 	;ex: DeathItemGiant.AddForm(DU01GiantForeskin, 1, 1)
@@ -37,7 +38,5 @@ Event OnInit()
 	addXTimes(DU01FrosttrollForeskin, DeathItemTrollFrost, 1)
 
 	;Debug.Trace("OnInit code started")
-    ;Debug.Notification("ForeskinLeveledList: Injecting!")
+       ;Debug.Notification("ForeskinLeveledList: Injecting!")
 EndEvent
-
-
