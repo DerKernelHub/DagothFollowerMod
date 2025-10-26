@@ -17,8 +17,8 @@ Function addXTimes(Ingredient ingr, LeveledItem itemList, int numTimes)
 
 	int i = 0
 	while (i < numTimes)
-	itemList.AddForm(ingr, 1, 1)
-    i += 1
+		itemList.AddForm(ingr, 1, 1)
+    	i += 1
 	endwhile
 
 EndFunction
